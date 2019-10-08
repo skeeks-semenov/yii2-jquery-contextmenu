@@ -60,6 +60,11 @@ class JqueryContextMenuWidget extends Widget
             $this->triggerId = $this->id . "-trigger";
         }
 
+
+    }
+
+    public function run()
+    {
         if ($this->button) {
 
             $options = (array) $this->button;
@@ -69,10 +74,7 @@ class JqueryContextMenuWidget extends Widget
 
             echo Html::beginTag($tag, $options);
         }
-    }
 
-    public function run()
-    {
         if ($this->button) {
             echo ArrayHelper::getValue((array) $this->button, 'label', 'left click');
             echo ArrayHelper::getValue((array) $this->button, 'content');
